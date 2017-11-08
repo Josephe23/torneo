@@ -1,0 +1,14 @@
+{% extends 'equipos/base.html' %}
+
+{% block content %}
+<div>
+  <h1><a href="/">Listar Jugadores</a></h1>
+</div>
+  {% for post in jugador %}
+    <div>
+      <p>Nombre: {{ post.nombre|linebreaksbr }}</p>
+      <p>Apellido: {{ post.apellido|linebreaksbr }}</p>
+      <p>Edad: {{ post.edad }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}

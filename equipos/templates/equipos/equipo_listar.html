@@ -1,0 +1,13 @@
+{% extends 'equipos/base.html' %}
+
+{% block content %}
+<div>
+  <h1><a href="/">Listar Equipos</a></h1>
+</div>
+  {% for post in equipo %}
+    <div>
+      <h1>Equipo: </h1> {{ post.nombre }}
+      <p>Que liga: {{ post.liga}}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
