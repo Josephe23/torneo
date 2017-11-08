@@ -1,9 +1,6 @@
-{% extends 'equipos/base.html' %}
 
-    {% block content %}
-        <h1>Nuevo Equipo</h1>
-        <form method="POST" class="post-form">{% csrf_token %}
-            {{ formulario.as_p }}
-            <button type="submit" class="save btn btn-default">Guardar</button>
-        </form>
-    {% endblock %}
+  <h1>Nuevo Equipo</h1>
+  <form method="POST" class="post-form">{% csrf_token %}
+    {{ formulario.as_p }}
+    <button type="submit" class="save btn btn-default">Guardar</button>
+  </form>

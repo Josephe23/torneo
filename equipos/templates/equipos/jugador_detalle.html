@@ -3,8 +3,8 @@
 {% block content %}
 
   <div class="post">
-    <a class="btn btn-warning" href="{% url 'jugador_editar' pk=jugador.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    <a class="btn btn-warning" href="{% url 'jugador_remover' pk=jugador.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-warning" href="{% url 'jugador_editar' pk=jugador.pk %}"><span class="glyphicon glyphicon-pencil">EDITAR</span></a>
+    <a class="btn btn-warning" href="{% url 'jugador_remover' pk=jugador.pk %}"><span class="glyphicon glyphicon-pencil">ELIMINAR</span></a>
     <h1>Nombre: {{jugador.nombre}}</h1>
     <h1>Apellido: {{jugador.apellido}}</h1>
     <p>Edad: {{jugador.edad}}</p>

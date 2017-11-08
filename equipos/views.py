@@ -26,10 +26,9 @@ def equipo_nuevo(request):
                 competicion = Competencia(jugador_id=jugador_id, equipo_id = equipo.id)
                 competicion.save()
                 return redirect('equipo_listar')
-            messages.add_message(request, messages.SUCCESS, 'Equipo guardado Exitosamente')
     else:
         formulario = EquipoForm()
-    return render(request, 'equipos/equipo_editar.html', {'formulario': formulario})
+        return render(request, 'equipos/equipo_editar.html', {'formulario': formulario})
 
 @login_required
 def jugador_nuevo(request):
@@ -41,7 +40,7 @@ def jugador_nuevo(request):
             return redirect('jugador_listar')
     else:
         formulario = JugadorForm()
-    return render(request, 'equipos/jugador_editar.html', {'formulario': formulario})
+        return render(request, 'equipos/jugador_editar.html', {'formulario': formulario})
 
 @login_required
 def jugador_editar(request, pk):
@@ -51,7 +50,7 @@ def jugador_editar(request, pk):
         if  formulario.is_valid():
             jugador = formulario.save(commit=False)
             jugador.save()
-            return render(request, 'jugador_detalle', pk=jugador.pk)
+            return redirect('jugador_detalle', pk=jugador.pk)
     else:
         formulario = JugadorForm(instance=jugador)
     return render(request, 'equipos/jugador_editar.html', {'formulario': formulario})
@@ -75,7 +74,7 @@ def equipo_detalle(request, pk):
 
 def jugador_detalle(request, pk):
     jugador = get_object_or_404(Jugador, pk=pk)
-    return render(request, 'equipos/equipo_detalle.html', {'jugador': jugador})
+    return render(request, 'equipos/jugador_detalle.html', {'jugador': jugador})
 
 @login_required
 def equipo_remover(request, pk):
