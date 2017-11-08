@@ -25,6 +25,7 @@ def equipo_nuevo(request):
             for jugador_id in request.POST.getlist('jugadores'):
                 competicion = Competencia(jugador_id=jugador_id, equipo_id = equipo.id)
                 competicion.save()
+                return redirect('equipo_listar')
             messages.add_message(request, messages.SUCCESS, 'Equipo guardado Exitosamente')
     else:
         formulario = EquipoForm()
