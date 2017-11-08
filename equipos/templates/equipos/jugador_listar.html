@@ -6,7 +6,7 @@
 </div>
   {% for post in jugador %}
     <div>
-      <p>Nombre: {{ post.nombre|linebreaksbr }}</p>
+      <p><a href="{% url 'equipo_detalle' pk=equipo.pk %}">Nombre: {{ post.nombre|linebreaksbr }}</p></a>
       <p>Apellido: {{ post.apellido|linebreaksbr }}</p>
       <p>Edad: {{ post.edad }}</p>
     </div>

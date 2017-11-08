@@ -6,7 +6,7 @@
 </div>
   {% for post in equipo %}
     <div>
-      <h1>Equipo: </h1> {{ post.nombre }}
+      <h1><a href="{% url 'equipo_detalle' pk=equipo.pk %}">Equipo: {{ post.nombre }}</a></h1> 
       <p>Que liga: {{ post.liga}}</p>
     </div>
   {% endfor %}
